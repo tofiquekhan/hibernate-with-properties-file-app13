@@ -15,15 +15,16 @@ public class Test {
 		Transaction tx = null;
 		try {
 			Configuration cfg  = new Configuration();
-			cfg.addResource("myproject/employee/resources/Employee.hbm.xml");
+//			cfg.addResource("myproject/employee/resources/Employee.hbm.xml");
+			cfg.addAnnotatedClass(Employee.class);
 			sessionFactory = cfg.buildSessionFactory();
 			session = sessionFactory.openSession();
 			tx = session.beginTransaction();
 			Employee emp = new Employee();
-			emp.setEno(104);
-			emp.setEname("Gibbs");
-			emp.setEsal(75412);
-			emp.setEaddr("Murana");
+			emp.setEno(105);
+			emp.setEname("Akash");
+			emp.setEsal(7415412);
+			emp.setEaddr("Batul");
 			session.save(emp);
 			tx.commit();
 		}catch (Exception e) {
